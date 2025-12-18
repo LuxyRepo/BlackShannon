@@ -1,0 +1,76 @@
+# BlackShannon Default Configuration
+
+# Target Configuration
+target:
+  url: null  # Will be set via CLI
+  timeout: 30
+  max_redirects: 5
+  verify_ssl: false  # For testing environments
+
+# Scan Configuration
+scan:
+  parallel_agents: true
+  max_concurrent_agents: 3
+  scan_timeout: 7200  # 2 hours
+  
+# Phase Configuration
+phases:
+  phase1_enabled: true   # Fingerprinting
+  phase2_enabled: true   # Analysis
+  phase3_enabled: true   # Exploitation
+  phase4_enabled: true   # Reporting
+
+# Attack Types (for PoC, only SQLi enabled)
+attacks:
+  sqli:
+    enabled: true
+    techniques:
+      - union_based
+      - error_based
+      - boolean_blind
+      - time_blind
+  xss:
+    enabled: false  # Will be implemented later
+  auth:
+    enabled: false
+  ssrf:
+    enabled: false
+
+# LLM Configuration
+llm:
+  strategy: hybrid  # deepseek | claude | hybrid
+  deepseek:
+    model: deepseek-chat
+    temperature: 0.3
+    max_tokens: 4000
+  claude:
+    model: claude-sonnet-4-20250514
+    temperature: 0.3
+    max_tokens: 8000
+  
+# HTTP Client
+http:
+  user_agent: "Mozilla/5.0 (Security Scanner)"
+  headers:
+    Accept: "*/*"
+  retry_count: 3
+  retry_delay: 2
+
+# Browser Automation
+browser:
+  headless: true
+  browser_type: chromium
+  timeout: 30000
+
+# Output
+output:
+  workspace_dir: ./workspace
+  report_format: markdown
+  save_evidence: true
+  verbose: true
+
+# Cost Control
+costs:
+  max_per_scan: 50
+  warn_threshold: 30
+  stop_on_limit: true

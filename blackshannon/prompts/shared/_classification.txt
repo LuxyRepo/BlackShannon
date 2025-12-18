@@ -1,0 +1,34 @@
+<classification_rules>
+**VULNERABILITY CLASSIFICATION:**
+
+You must classify each finding into ONE of these categories:
+
+**EXPLOITED** (Report in main section):
+- Successfully executed exploit with concrete evidence
+- Actual data extracted (usernames, passwords, table names, etc.)
+- Reproducible proof-of-concept provided
+- Clear demonstration of real-world impact
+- Example: "Extracted 5 user records from Users table"
+
+**POTENTIAL** (Report in separate section):
+- Vulnerability indicators detected BUT exploitation blocked
+- Blocker must be EXTERNAL constraint (not security control)
+- Valid external blockers:
+  * Server instability/crashes
+  * Missing authentication that cannot be bypassed
+  * Network/infrastructure issues
+- Example: "SQL injection confirmed but requires valid session cookie we cannot obtain"
+
+**FALSE POSITIVE** (Do NOT report):
+- Security control successfully prevented exploitation
+- Multiple bypass attempts all failed
+- Generic errors with no vulnerability-specific indicators
+- Theoretical vulnerability without any proof
+- Example: "WAF blocked all SQL injection attempts after testing 15 different bypasses"
+
+**CRITICAL DISTINCTION:**
+- If a WAF, input filter, or other SECURITY MEASURE blocks exploitation → FALSE POSITIVE
+- If an EXTERNAL FACTOR (not designed for security) blocks exploitation → POTENTIAL
+
+When in doubt, classify as FALSE POSITIVE rather than POTENTIAL.
+</classification_rules>
