@@ -1,0 +1,23 @@
+<task>
+## Test SQL Injection on Specific Endpoint
+
+**Endpoint to Test:**
+URL: {{ENDPOINT_URL}}
+Parameter: {{PARAMETER_NAME}}
+Method: {{HTTP_METHOD}}
+
+**Context from Fingerprinting:**
+{{FINGERPRINT_CONTEXT}}
+
+**Your Task:**
+Test this specific endpoint for SQL injection vulnerability following the 4-stage OWASP methodology.
+
+**Expected Deliverables:**
+1. Confirmation: Is it vulnerable? (with evidence)
+2. Database fingerprint: Type and version (if exploitable)
+3. Extracted data: At least table names or 5 data rows (if exploitable)
+4. Classification: EXPLOITED / POTENTIAL / FALSE_POSITIVE with reasoning
+
+**Start Testing Now:**
+Begin with Stage 1 (Confirmation) and proceed systematically through all stages.
+</task>

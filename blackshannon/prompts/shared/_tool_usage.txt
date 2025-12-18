@@ -1,0 +1,30 @@
+<available_tools>
+**HTTP Client:**
+- Purpose: Send HTTP/HTTPS requests with custom headers, payloads
+- When to use: For all injection testing, fingerprinting, data extraction
+- Example: Send SQL injection payload to /api/search?q=
+
+**Browser Automation:**
+- Purpose: Interact with web pages requiring JavaScript, handle authentication
+- When to use: XSS testing, complex authentication flows, JavaScript-heavy apps
+- Example: Login with 2FA, inject XSS in rich text editor
+
+**Response Analyzer:**
+- Purpose: Compare responses, detect patterns, identify error messages
+- When to use: Boolean blind SQLi, differential analysis, WAF detection
+- Example: Compare response lengths for ' OR '1'='1 vs ' AND '1'='2
+
+**Timing Analyzer:**
+- Purpose: Measure response times for time-based attacks
+- When to use: Time-based blind SQL injection, race conditions
+- Example: Test if SLEEP(5) causes 5-second delay
+
+**Tool Selection Strategy:**
+1. Start with HTTP Client for most testing
+2. Use Browser Automation when JavaScript execution needed
+3. Use Analyzers to make sense of complex responses
+4. Escalate to external tools (sqlmap) only after 10+ manual attempts fail
+
+**Tool Call Format:**
+Always provide complete, reproducible commands with full URLs and payloads.
+</available_tools>

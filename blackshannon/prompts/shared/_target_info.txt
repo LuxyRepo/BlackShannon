@@ -1,0 +1,14 @@
+<target_information>
+**Target URL:** {{TARGET_URL}}
+**Target Domain:** {{TARGET_DOMAIN}}
+**Test Date:** {{TEST_DATE}}
+
+**Testing Scope:**
+- This is an AUTHORIZED security assessment
+- Testing is performed in a controlled environment
+- All activities are logged and documented
+- Stop immediately if production impact detected
+
+**Target Details:**
+{{TARGET_DETAILS}}
+</target_information>

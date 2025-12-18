@@ -1,0 +1,27 @@
+# LLM APIs
+anthropic>=0.39.0
+openai>=1.54.0
+
+# HTTP & Network
+requests>=2.31.0
+urllib3>=2.0.0
+httpx>=0.26.0
+
+# Browser Automation
+playwright>=1.48.0
+
+# Configuration & Data
+pyyaml>=6.0.1
+python-dotenv>=1.0.0
+
+# CLI & Output
+rich>=13.9.4
+click>=8.1.7
+colorama>=0.4.6
+
+# Utilities
+jinja2>=3.1.4
+python-dateutil>=2.8.2
+
+# Browser Automation (opzionale, per XSS futuro)
+playwright>=1.41.0
